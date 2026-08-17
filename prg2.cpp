@@ -1,39 +1,31 @@
-// #include <iostream>
-// using namespace std;
-// void swapByvalue(int a,int b) {
-//     int temp;
-//     temp=a;
-//     a=b;
-//     b=temp;
-// }
-// void swapByreference(int &x , int &y) {
-//     int temp;
-//     temp=x;
-//     x=y;
-//     y=temp;
-// }
-// void swapByaddress(int *c , int *d) {
-//     int temp;
-//     temp=*c;
-//     *c=*d;
-//     *d=temp;
-// }
-// int main() {
-//     int e = 10;
-//     int f = 20;
-//     cout<<e<<" "<<f<<endl;
-//     swapByvalue(e,f);
-//     cout<<"new = "<<e<<" "<<f<<endl;
-//     int x = 10;
-//     int y = 20;
-//     cout<<x<<" "<<y<<endl;
-//     swapByreference(x, y);
-//     cout<<"new = "<<x<<" "<<y<<endl;
-//     int c = 10;
-//     int d = 20;
-//     cout<<c<<" "<<d<<endl;
-//     swapByaddress(&c, &d);
-//     cout<<"new = "<<c<<" "<<d<<endl;
-//     return 0;
-// }
+#include <iostream>
+using namespace std;
 
+// Call by Value
+void value(int x) {
+    x = 20;
+}
+
+// Call by Reference
+void reference(int &x) {
+    x = 30;
+}
+
+// Call by Address
+void address(int *x) {
+    *x = 40;
+}
+
+int main() {
+    int a = 10, b = 10, c = 10;
+
+    value(a);
+    reference(b);
+    address(&c);
+
+    cout << "Call by Value: " << a << endl;
+    cout << "Call by Reference: " << b << endl;
+    cout << "Call by Address: " << c << endl;
+
+    return 0;
+}
