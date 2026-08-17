@@ -1,23 +1,21 @@
 #include <iostream>
-#include <memory>
 using namespace std;
-class Student {
+class Calculator {
 public:
-    Student() {
-        cout << "Student created" << endl;
+    int add(int a, int b) {
+        return a + b;
     }
-    ~Student() {
-        cout << "Student destroyed" << endl;
+    float add(float a, float b) {
+        return a + b;
     }
-    void display() {
-        cout << "Smart pointer manages memory safely." << endl;
+    int add(int a, int b, int c) {
+        return a + b + c;
     }
 };
 int main() {
-    unique_ptr<Student> p1 = make_unique<Student>();
-    p1->display();
-    shared_ptr<Student> p2 = make_shared<Student>();
-    shared_ptr<Student> p3 = p2;
-    cout << "Shared pointer count: " << p2.use_count() << endl;
+    Calculator obj;
+    cout << "Integer addition: " << obj.add(10, 20) << endl;
+    cout << "Float addition: " << obj.add(10.5f, 20.5f) << endl;
+    cout << "Three integer addition: " << obj.add(10, 20, 30) << endl;
     return 0;
 }
