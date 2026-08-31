@@ -28,7 +28,6 @@ int main() {
         cout << "\tStudent " << i + 1 << endl;
         (pointer + i)->input();
     }
-    
     cout << "\nRoll\tName\tMarks\n";
     for (int i = 0; i < n; i++) {
         (pointer + i)->display();
