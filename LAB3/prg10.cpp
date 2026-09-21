@@ -1,23 +1,25 @@
 #include <iostream>
-#include <memory>
 using namespace std;
-class Student {
+class Point {
+    int x, y;
 public:
-    Student() {
-        cout << "Student created" << endl;
-    }
-    ~Student() {
-        cout << "Student destroyed" << endl;
-    }
-    void display() {
-        cout << "Smart pointer manages memory safely." << endl;
-    }
+    inline void input();
+    inline void show();
 };
+inline void Point::input() {
+    cout << "Enter x and y: ";
+    cin >> x >> y;
+}
+inline void Point::show() {
+    cout << "x = " << x << ", y = " << y << endl;
+}
 int main() {
-    unique_ptr<Student> p1 = make_unique<Student>();
-    p1->display();
-    shared_ptr<Student> p2 = make_shared<Student>();
-    shared_ptr<Student> p3 = p2;
-    cout << "Shared pointer count: " << p2.use_count() << endl;
+    Point p1, p2;
+    cout << "Point 1:" << endl;
+    p1.input();
+    p1.show();
+    cout << "Point 2:" << endl;
+    p2.input();
+    p2.show();
     return 0;
 }

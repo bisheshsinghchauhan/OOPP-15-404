@@ -2,20 +2,22 @@
 using namespace std;
 class Calculator {
 public:
-    int add(int a, int b) {
+    inline int add(int a, int b = 0) {
         return a + b;
     }
-    float add(float a, float b) {
+    inline double add(double a, double b) {
         return a + b;
     }
-    int add(int a, int b, int c) {
-        return a + b + c;
+    inline int multiply(int a, int b = 1) {
+        return a * b;
     }
 };
 int main() {
-    Calculator obj;
-    cout << "Integer addition: " << obj.add(10, 20) << endl;
-    cout << "Float addition: " << obj.add(10.5f, 20.5f) << endl;
-    cout << "Three integer addition: " << obj.add(10, 20, 30) << endl;
+    Calculator c;
+    cout << "Addition: " << c.add(10, 20) << endl;
+    cout << "Default Addition: " << c.add(10) << endl;
+    cout << "Double Addition: " << c.add(5.5, 2.5) << endl;
+    cout << "Multiplication: " << c.multiply(5, 4) << endl;
+    cout << "Default Multiplication: " << c.multiply(5) << endl;
     return 0;
 }

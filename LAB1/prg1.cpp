@@ -2,27 +2,23 @@
 using namespace std;
 
 class Student {
-    int roll;
-    string name;
-    float marks;
-
 public:
+    string name, branch;
+    int roll;
+
     void input() {
-        cin >> roll >> name >> marks;
+        cin >> name >> roll >> branch;
     }
-//
-    void display() {
-        cout << roll << " " << name << " " << marks << endl;
+
+    void show() {
+        cout << name << " " << roll << " " << branch << endl;
     }
 };
+
 int main() {
     Student s1, s2;
-
     s1.input();
     s2.input();
-
-    s1.display();
-    s2.display();
-
-    return 0;
+    s1.show();
+    s2.show();
 }

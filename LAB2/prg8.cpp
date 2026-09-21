@@ -1,27 +1,22 @@
 #include <iostream>
 using namespace std;
-class Number {
-    int value;
-public:
-    void getData() {
-        cin >> value;
-    }
-    void display() {
-        cout << "Result = " << value << endl;
-    }
-    Number add(Number n) {
-        Number temp;
-        temp.value = value + n.value;
-        return temp;
-    }
-};
+void value(int x) {
+    x = x + 10;
+}
+void reference(int &x) {
+    x = x + 10;
+}
+void address(int *x) {
+    *x = *x + 10;
+}
 int main() {
-    Number n1, n2, result;
-    cout << "Enter first number: ";
-    n1.getData();
-    cout << "Enter second number: ";
-    n2.getData();
-    result = n1.add(n2);
-    result.display();
+    int a = 10, b = 10, c = 10;
+    value(a);
+    reference(b);
+    address(&c);
+    cout << "Call by Value: " << a << endl;
+    cout << "Call by Reference: " << b << endl;
+    cout << "Call by Address: " << c;
+
     return 0;
 }

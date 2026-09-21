@@ -1,12 +1,23 @@
 #include <iostream>
-#include <vector>
 using namespace std;
+class Time {
+    int hh, mm, ss;
+
+public:
+    void input(int h, int m, int s);
+    void show();
+};
+void Time::input(int h, int m, int s) {
+    hh = h; mm = m; ss = s;
+}
+void Time::show() {
+    cout << hh << ":" << mm << ":" << ss;
+}
 int main() {
-    vector<int> nums = {10, 20, 30, 40, 50};
-
-    for (auto x : nums) {
-        cout << x << " ";
-    }
-
-    return 0;
+    Time t1, t2;
+    t1.input(10, 20, 30);
+    t2.input(12, 40, 50);
+    t1.show();
+    cout << endl;
+    t2.show();
 }
