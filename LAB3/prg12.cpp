@@ -19,17 +19,17 @@ int main() {
     Area a;
     double radius, length, width, base, height;
     int side;
-    cout << "Enter radius of circle: ";
+    cout << "Enter radius : ";
     cin >> radius;
-    cout << "Circle Area: " << a.area(radius) << endl;
-    cout << "Enter length and width of rectangle: ";
+    cout << "Circle Area : " << a.area(radius) << endl;
+    cout << "Enter length and width : ";
     cin >> length >> width;
-    cout << "Rectangle Area: " << a.area(length, width) << endl;
-    cout << "Enter side of square: ";
+    cout << "Rectangle Area : " << a.area(length, width) << endl;
+    cout << "Enter side : ";
     cin >> side;
-    cout << "Square Area: " << a.area(side) << endl;
-    cout << "Enter base and height of triangle: ";
+    cout << "Square Area : " << a.area(side) << endl;
+    cout << "Enter base and height : ";
     cin >> base >> height;
-    cout << "Triangle Area: " << a.area(base, height, true) << endl;
+    cout << "Triangle Area : " << a.area(base, height, true) << endl;
     return 0;
 }
